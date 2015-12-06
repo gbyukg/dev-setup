@@ -1,0 +1,160 @@
+set scrolljump=0                " Lines to scroll when cursor leaves screen
+set scrolloff=5                 " Minimum lines to keep above and below cursor
+set sidescrolloff=15
+set sidescroll=1
+setlocal nospell
+set encoding=utf-8
+
+nmap <leader>fs :OverCommandLine /<CR>
+nmap <leader>fr :OverCommandLine %s/<CR>
+
+" 自动格式化工具
+noremap <F3> :Autoformat<CR>
+
+" vim-session {
+    " 关闭窗口后禁止提示是否保存session对话框
+    let g:session_autoload = 'no'
+    let g:session_autosave = 'no'
+    let g:session_directory = spf13_consolidated_directory . 'session'
+    " let g:session_autosave = 'yes'
+" }
+
+" Autoformat "https://github.com/Chiel92/vim-autoformat" {
+    " let g:formatprg_args_expr_cppatprg_php = "phpCB"
+    " let g:formatprg_args_expr_php = '"--space-after-if --space-after-switch --space-after-while --space-before-start-angle-bracket --space-after-end-angle-bracket --extra-padding-for-case-statement --one-true-brace-function-declaration --glue-amperscore --change-shell-comment-to-double-slashes-comment --force-large-php-code-tag --force-true-false-null-contant-lowercase --align-equal-statements --align-equal-statements-to-fixed-pos --comment-rendering-style PEAR %:p"'
+    " let g:formatdef_my_custom_cs = '"phpCB --space-after-if --space-after-switch --space-after-while --space-before-start-angle-bracket --space-after-end-angle-bracket --extra-padding-for-case-statement --one-true-brace-function-declaration --glue-amperscore --change-shell-comment-to-double-slashes-comment --force-large-php-code-tag --force-true-false-null-contant-lowercase --align-equal-statements --align-equal-statements-to-fixed-pos --comment-rendering-style PEAR %:p"'
+    " let g:formatters_php = ['my_custom_php']
+    " 使用pg_format工具格式化SQL
+    let g:autoformat_verbosemode = 1
+    let g:formatdef_pg_format = '"pg_format - -"'
+    let g:formatters_sql= ['pg_format']
+" }
+
+" syntastic {
+    " 行号左边状态栏错误标志
+    let g:syntastic_enable_signs=1
+    let g:syntastic_error_symbol='✗'
+    let g:syntastic_warning_symbol='⚠'
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_always_populate_loc_list=1 "Always put errors in the location list
+    let g:syntastic_enable_balloons = 1
+    let g:syntastic_check_on_wq = 0          " donot check when :wq, :x and :ZZ
+    "let g:syntastic_debug = 1
+    "let g:syntastic_check_on_open=1         " Always check when buffers are opened
+
+    " C语法检测工具
+    let g:syntastic_c_checkers = ['gcc']    " Use gcc as default syntax checker"
+    let g:ycm_global_ycm_extra_conf = $HOME . '/.ycm_extra_conf.py'
+    "let g:syntastic_c_checkers = ['make', 'gcc', 'sparse', 'splint']
+
+    " PHP语法检测工具
+    let g:syntastic_php_checkers = ['php']
+    "let g:syntastic_php_checkers = ['php','phpcs', 'phpmd']
+
+    " JS语法检测工具
+    "let g:syntastic_javascript_jshint_conf="/home/gbyukg/.jshintrc"
+    let g:syntastic_jshint_exec = "jshint"
+    let g:syntastic_javascript_checkers = ['jshint']
+
+    " bash shell 语法检测工具
+    "let g:syntastic_sh_exec = $HOME . "/.cabal/bin/shellcheck"
+    let g:syntastic_sh_checkers = ['shellcheck', 'sh']
+
+    " HTML,xHTML语法检测工具
+    "let g:syntastic_javascript_checkers = ['jshint']
+" }
+
+" youcompleteme {
+    let g:ycm_semantic_triggers =  {
+        \   'c' : ['->', '.'],
+        \   'objc' : ['->', '.'],
+        \   'ocaml' : ['.', '#'],
+        \   'cpp,objcpp' : ['->', '.', '::'],
+        \   'perl' : ['->'],
+        \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+        \   'ruby' : ['.', '::'],
+        \   'lua' : ['.', ':'],
+        \   'erlang' : [':'],
+        \ }
+        " 关闭php 'php' : ['->', '::'],
+" }
+
+" startify{
+    " 设定读取session的路径
+    let g:startify_session_dir = spf13_consolidated_directory . 'session'
+    " 显示保存的session
+    let g:startify_show_sessions = 1
+    " 显示的条数
+    let g:startify_show_files_number = 15
+    let g:startify_skiplist_server = []
+"}
+
+" vim-indent-guides {
+    let g:indent_guides_enable_on_vim_startup = 1
+    let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+    hi IndentGuidesOdd  ctermbg=black
+    hi IndentGuidesEven ctermbg=darkgrey
+    "let g:indent_guides_auto_colors = 0
+    "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+    "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+" }
+
+" vim-airline{
+    if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+    endif
+
+    " unicode symbols
+    let g:airline_left_sep = '»'
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '«'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.crypt = '🔒'
+    let g:airline_symbols.linenr = '␊'
+    let g:airline_symbols.linenr = '␤'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.paste = 'Þ'
+    let g:airline_symbols.paste = '∥'
+    let g:airline_symbols.whitespace = 'Ξ'
+"}
+
+:function ToggleWrap()
+: if (&wrap == 1)
+:   if (&linebreak == 0)
+:     set linebreak
+:   else
+:     set nowrap
+:   endif
+: else
+:   set wrap
+:   set nolinebreak
+: endif
+:endfunction
+map <F6> :call ToggleWrap()<CR>
+
+" GUI Settings {
+
+    " GVIM- (here instead of .gvimrc)
+    if has('gui_running')
+        set guioptions-=T           " Remove the toolbar
+        set lines=40                " 40 lines of text instead of 24
+        if !exists("g:spf13_no_big_font")
+            if LINUX() && has("gui_running")
+                set guifont=Andale\ Mono\ Regular\ 12,Menlo\ Regular\ 11,Consolas\ Regular\ 12,Courier\ New\ Regular\ 14
+            elseif OSX() && has("gui_running")
+                set guifont=Monacl:h14,Andale\ Mono\ Regular:h14,Menlo\ Regular:h14,Consolas\ Regular:h12,Courier\ New\ Regular:h14
+                set lines=999 columns=999
+            elseif WINDOWS() && has("gui_running")
+                set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
+            endif
+        endif
+    else
+        if &term == 'xterm' || &term == 'screen'
+            set t_Co=256            " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
+        endif
+        "set term=builtin_ansi       " Make arrow and other keys work
+    endif
+
+" }

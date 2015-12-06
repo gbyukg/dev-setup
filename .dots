@@ -63,13 +63,21 @@ function runDots() {
             echo ""
             ./pydata.sh
         fi
+        if [ $ARG == "cus" ] || [ $ARG == "all" ]; then
+            # Run the pydata.sh Script
+            echo "------------------------------"
+            echo "Setting up Python data development environment."
+            echo "------------------------------"
+            echo ""
+            ./cus.sh
+        fi
         if [ $ARG == "aws" ] || [ $ARG == "all" ]; then
             # Run the aws.sh Script
             echo "------------------------------"
             echo "Setting up AWS development environment."
             echo "------------------------------"
             echo ""
-            ./aws.sh
+            #./aws.sh
         fi
         if [ $ARG == "datastores" ] || [ $ARG == "all" ]; then
             # Run the datastores.sh Script
@@ -77,7 +85,7 @@ function runDots() {
             echo "Setting up data stores."
             echo "------------------------------"
             echo ""
-            ./datastores.sh
+            #./datastores.sh
         fi
         if [ $ARG == "webdev" ] || [ $ARG == "all" ]; then
             # Run the webdev.sh Script
@@ -93,7 +101,7 @@ function runDots() {
             echo "Setting up Android development environment."
             echo "------------------------------"
             echo ""
-            ./android.sh
+            #./android.sh
         fi
     done
 

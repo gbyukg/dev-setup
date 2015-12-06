@@ -1,0 +1,36 @@
+
+""""""""""""""""""""""""""""""""""""""""""
+"
+" 配置文件读取顺序
+" .vimrc -> vimrc.before
+"                -> vimrc.before -> ~/.vimrc.bundles
+"                       -> vimrc.before.local -> vimrc.before.local
+"                -> ~/.vimrc.bundles
+"
+"
+"
+"
+"
+"
+""""""""""""""""""""""""""""""""""""""""""
+
+" 禁止自动修改当前路径为当前打开文件所在路径
+let g:spf13_no_autochdir = 1
+
+let g:spf13_no_wrapRelMotion = 1
+
+" 禁止快速打开所有配置文件
+let g:spf13_edit_config_mapping = 'null'
+
+" 设定vim文件缓存路径0
+" 修改vimbackup, vimviews, vimundo, 和 vimswap 文件保存路径
+let vimcache = $HOME . '/.vimcache/'
+if !isdirectory(vimcache)
+    call mkdir(vimcache)
+endif
+let g:spf13_consolidated_directory = vimcache
+
+" 指定要使用那些组件
+if !exists('g:spf13_bundle_groups')
+    let g:spf13_bundle_groups=['general', 'youcompleteme', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc',]
+endif

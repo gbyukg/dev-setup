@@ -1950,3 +1950,7 @@ The content developed by Donne Martin is distributed under the following license
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+# 自定义部分
+### iTerm2
+字体： Monaco:h14

@@ -1,0 +1,54 @@
+UnBundle "jistr/vim-nerdtree-tabs"
+UnBundle 'tpope/vim-abolish.git'
+UnBundle 'kana/vim-textobj-user'
+UnBundle 'kana/vim-textobj-indent'
+UnBundle 'gcmt/wildfire.vim'
+
+Bundle "brookhong/cscope.vim"
+
+" 打开空白页显示一些最近打开文件信息等{
+    Bundle "mhinz/vim-startify"
+" }
+
+" 格式化代码工具{
+    Bundle "Chiel92/vim-autoformat"
+" }
+
+" 通过使用+、-来扩充visual选择区域 {
+    Bundle "terryma/vim-expand-region"
+" }
+
+" 自动为语句添加结束标志{
+    Bundle "tpope/vim-endwise.git"
+" }
+
+" 类似CtrlP的搜索工具{
+    "Bundle "Shougo/unite.vim"
+" }
+
+" json format {
+    Bundle "alfredodeza/jacinto.vim"
+" }
+
+" joonty/vim-phpqa {
+    " Bundle "joonty/vim-phpqa"
+" }
+
+" yonchu/accelerated-smooth-scroll {
+    " 平滑的显示<C-U>或<C-D>滚动画面
+    Bundle "yonchu/accelerated-smooth-scroll"
+" }
+
+" vim 访问远程文件 {
+    Bundle "vim-scripts/netrw.vim"
+" }
+
+" vim mark插件 kshenoy/vim-signature {
+    Bundle "kshenoy/vim-signature"
+" }
+
+" session管理工具{
+    " session所需库文件
+    "Bundle "xolox/vim-misc"
+    "Bundle "xolox/vim-session"
+" }
