@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 # 工具补充
-brew install astyle
-brew install cmake
-brew install cscope
-brew install pgformatter
-brew install tidy-html5
-brew install shellcheck
+brew install astyle cmake cscope pgformatter tidy-html5 shellcheck tmux
+
+# 安装 quick look 插件
+brew cask install qlstephen qlcolorcode qlmarkdown qlprettypatch quicklook-json betterzipql suspicious-package
 
 # 安装 python 库
 pip install autopep8
