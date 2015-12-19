@@ -5,8 +5,37 @@ set sidescroll=1
 setlocal nospell
 set encoding=utf-8
 
+" 显示 80 字符边界
+set colorcolumn=80
+
 nmap <leader>fs :OverCommandLine /<CR>
 nmap <leader>fr :OverCommandLine %s/<CR>
+
+" 窗口切换
+nnoremap <silent> <C-k>              :wincmd k<CR>
+nnoremap <silent> <C-j>              :wincmd j<CR>
+nnoremap <silent> <C-h>              :wincmd h<CR>
+nnoremap <silent> <C-l>              :wincmd l<CR>
+inoremap <silent> <C-k>         <Esc>:wincmd k<CR>
+inoremap <silent> <C-j>         <Esc>:wincmd j<CR>
+inoremap <silent> <C-h>         <Esc>:wincmd h<CR>
+inoremap <silent> <C-l>         <Esc>:wincmd l<CR>
+nnoremap <silent> <C-Up>             :wincmd k<CR>
+nnoremap <silent> <C-Down>           :wincmd j<CR>
+nnoremap <silent> <C-Left>           :wincmd h<CR>
+nnoremap <silent> <C-Right>          :wincmd l<CR>
+inoremap <silent> <C-Up>        <Esc>:wincmd k<CR>
+inoremap <silent> <C-Down>      <Esc>:wincmd j<CR>
+inoremap <silent> <C-Left>      <Esc>:wincmd h<CR>
+inoremap <silent> <C-Right>     <Esc>:wincmd l<CR>
+
+" buffer 切换
+noremap <silent> <A-RIGHT>   :bprevious<CR>
+noremap <silent> <A-LEFT> :bNext<CR>
+noremap <silent> <Leader>z   :bprevious<CR>
+noremap <silent> <Leader>x :bNext<CR>
+
+nmap <C-X> :BufOnly<CR>
 
 " 自动格式化工具
 noremap <F3> :Autoformat<CR>

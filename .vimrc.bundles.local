@@ -10,6 +10,10 @@ Bundle "brookhong/cscope.vim"
     Bundle "mhinz/vim-startify"
 " }
 
+" duff/vim-bufonly {
+    Bundle "duff/vim-bufonly"
+" }
+
 " 格式化代码工具{
     Bundle "Chiel92/vim-autoformat"
 " }

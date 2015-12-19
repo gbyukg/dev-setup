@@ -20,7 +20,11 @@ let g:spf13_no_autochdir = 1
 let g:spf13_no_wrapRelMotion = 1
 
 " 禁止快速打开所有配置文件
-let g:spf13_edit_config_mapping = 'null'
+" 关闭该选项, 否则查找是 n 键太慢
+let g:spf13_edit_config_mapping = ''
+
+" 禁用 spf13 窗口快速切换功能
+let g:spf13_no_easyWindows = 1
 
 " 设定vim文件缓存路径0
 " 修改vimbackup, vimviews, vimundo, 和 vimswap 文件保存路径
