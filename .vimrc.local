@@ -72,7 +72,7 @@ noremap <F3> :Autoformat<CR>
     "let g:syntastic_check_on_open=1         " Always check when buffers are opened
 
     " C语法检测工具
-    let g:syntastic_c_checkers = ['gcc']    " Use gcc as default syntax checker"
+    let g:syntastic_c_checkers = ['gcc', 'make']     " Use gcc as default syntax checker
     let g:ycm_global_ycm_extra_conf = $HOME . '/.ycm_extra_conf.py'
     "let g:syntastic_c_checkers = ['make', 'gcc', 'sparse', 'splint']
 
@@ -105,6 +105,8 @@ noremap <F3> :Autoformat<CR>
         \   'lua' : ['.', ':'],
         \   'erlang' : [':'],
         \ }
+    " 关闭 youcompleteme 自带的语法检测工具, 否则syntastic 无法正确检测 C 文件
+    let g:ycm_show_diagnostics_ui = 0
         " 关闭php 'php' : ['->', '::'],
 " }
 
