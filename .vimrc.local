@@ -2,8 +2,10 @@ set scrolljump=0                " Lines to scroll when cursor leaves screen
 set scrolloff=5                 " Minimum lines to keep above and below cursor
 set sidescrolloff=15
 set sidescroll=1
-setlocal nospell
 set encoding=utf-8
+set nospell " 关闭拼写检查
+set whichwrap=   " 移动到行头和尾时继续移动, 禁止换行
+set noeb
 
 " 显示 80 字符边界
 set colorcolumn=80
@@ -107,6 +109,9 @@ noremap <F3> :Autoformat<CR>
         \ }
     " 关闭 youcompleteme 自带的语法检测工具, 否则syntastic 无法正确检测 C 文件
     let g:ycm_show_diagnostics_ui = 0
+    nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+    nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+    nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
         " 关闭php 'php' : ['->', '::'],
 " }
 

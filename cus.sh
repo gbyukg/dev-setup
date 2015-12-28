@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # 工具补充
-brew install astyle cmake cscope pgformatter tidy-html5 shellcheck tmux
+# doxygen 文档生成工具
+brew install astyle cmake cscope pgformatter tidy-html5 shellcheck tmux doxygen
 
 # 安装 quick look 插件
 brew cask install qlstephen qlcolorcode qlmarkdown qlprettypatch quicklook-json betterzipql suspicious-package
