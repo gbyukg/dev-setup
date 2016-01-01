@@ -35,7 +35,7 @@ inoremap <silent> <C-Right>     <Esc>:wincmd l<CR>
 noremap <silent> <A-RIGHT>   :bprevious<CR>
 noremap <silent> <A-LEFT> :bNext<CR>
 noremap <silent> <Leader>z   :bprevious<CR>
-noremap <silent> <Leader>x :bNext<CR>
+noremap <silent> <Leader>x :bnext<CR>
 
 nmap <C-X> :BufOnly<CR>
 
