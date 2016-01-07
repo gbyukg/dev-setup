@@ -4,6 +4,8 @@ UnBundle 'kana/vim-textobj-user'
 UnBundle 'kana/vim-textobj-indent'
 UnBundle 'gcmt/wildfire.vim'
 
+" doxygen vim 插件
+Bundle "DoxygenToolkit.vim"
 Bundle "brookhong/cscope.vim"
 
 " 打开空白页显示一些最近打开文件信息等{
