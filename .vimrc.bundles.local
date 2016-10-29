@@ -58,3 +58,11 @@ Bundle "brookhong/cscope.vim"
     "Bundle "xolox/vim-misc"
     "Bundle "xolox/vim-session"
 " }
+
+" Babel 转换工具{
+    Bundle "jbgutierrez/vim-babel"
+" }
+
+" Groovy highlighted {
+    Bundle "vim-scripts/groovy.vim"
+" }

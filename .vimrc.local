@@ -7,6 +7,11 @@ set nospell " 关闭拼写检查
 set whichwrap=   " 移动到行头和尾时继续移动, 禁止换行
 set noeb
 
+" 禁止代码折叠{
+    set nofoldenable
+    let g:DisableAutoPHPFolding = 1
+" }
+
 " 显示 80 字符边界
 set colorcolumn=80
 
@@ -87,7 +92,8 @@ noremap <leader>f :Autoformat<CR>
 
     " JS语法检测工具
     "let g:syntastic_javascript_jshint_conf="/home/gbyukg/.jshintrc"
-    let g:syntastic_jshint_exec = "jshint"
+    "let g:syntastic_jshint_exec = "jshint"
+    let g:syntastic_javascript_jshint_exec = "jshint"
     let g:syntastic_javascript_checkers = ['jshint']
 
     " bash shell 语法检测工具
@@ -217,4 +223,8 @@ map <F6> :call ToggleWrap()<CR>
     nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
     " i: Find files #including this file
     nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+" }
+
+" vim-javascript {
+    let g:javascript_plugin_jsdoc = 1
 " }
